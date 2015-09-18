@@ -2070,4 +2070,15 @@ class AdAccount extends AbstractCrudObject {
     array $fields = array(), array $params = array(), $pending = false) {
     return $this->getOffsitePixels($fields, $params, $pending);
   }
+
+  /**
+   * @param array $fields
+   * @param array $params
+   * @return Cursor
+   */
+  public function getSavedAudiences(
+    array $fields = array(), array $params = array()) {
+    return $this->getManyByConnection(
+      SavedAudience::className(), $fields, $params);
+  }
 }
