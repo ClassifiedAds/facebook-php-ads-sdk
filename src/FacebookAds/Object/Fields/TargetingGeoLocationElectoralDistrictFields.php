@@ -22,7 +22,7 @@
  *
  */
 
-namespace FacebookAds\Object\Values;
+namespace FacebookAds\Object\Fields;
 
 use FacebookAds\Enum\AbstractEnum;
 
@@ -33,14 +33,21 @@ use FacebookAds\Enum\AbstractEnum;
  * on github and we'll fix in our codegen framework. We'll not be able to accept
  * pull request for this class.
  *
- * @method static UserInstallTypeValues getInstance()
  */
-class UserInstallTypeValues extends AbstractEnum {
 
-  const UNKNOWN = 'UNKNOWN';
-  const AUTH_DIALOG = 'AUTH_DIALOG';
-  const AUTH_REFERRAL = 'AUTH_REFERRAL';
-  const INSTANT_PERSONALIZATION = 'INSTANT_PERSONALIZATION';
-  const START_NOW = 'START_NOW';
-  const START_NOW_V2 = 'START_NOW_V2';
+class TargetingGeoLocationElectoralDistrictFields extends AbstractEnum {
+
+  const COUNTRY = 'country';
+  const ELECTORAL_DISTRICT = 'electoral_district';
+  const KEY = 'key';
+  const NAME = 'name';
+
+  public function getFieldTypes() {
+    return array(
+      'country' => 'string',
+      'electoral_district' => 'string',
+      'key' => 'string',
+      'name' => 'string',
+    );
+  }
 }

@@ -22,13 +22,9 @@
  *
  */
 
-namespace FacebookAds\Object;
+namespace FacebookAds\Object\Values;
 
-use FacebookAds\ApiRequest;
-use FacebookAds\Cursor;
-use FacebookAds\Http\RequestInterface;
-use FacebookAds\TypeChecker;
-use FacebookAds\Object\Fields\ConnectionObjectOpenGraphObjectFields;
+use FacebookAds\Enum\AbstractEnum;
 
 /**
  * This class is auto-genereated.
@@ -37,21 +33,11 @@ use FacebookAds\Object\Fields\ConnectionObjectOpenGraphObjectFields;
  * on github and we'll fix in our codegen framework. We'll not be able to accept
  * pull request for this class.
  *
+ * @method static ProductCatalogVerticalValues getInstance()
  */
+class ProductCatalogVerticalValues extends AbstractEnum {
 
-class ConnectionObjectOpenGraphObject extends AbstractObject {
-
-  /**
-   * @return ConnectionObjectOpenGraphObjectFields
-   */
-  public static function getFieldsEnum() {
-    return ConnectionObjectOpenGraphObjectFields::getInstance();
-  }
-
-  protected static function getReferencedEnums() {
-    $ref_enums = array();
-    return $ref_enums;
-  }
-
-
+  const COMMERCE = 'commerce';
+  const DESTINATIONS = 'destinations';
+  const HOTELS = 'hotels';
 }

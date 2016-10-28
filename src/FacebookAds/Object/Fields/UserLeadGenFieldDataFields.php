@@ -35,19 +35,15 @@ use FacebookAds\Enum\AbstractEnum;
  *
  */
 
-class ConnectionObjectOpenGraphActionFields extends AbstractEnum {
+class UserLeadGenFieldDataFields extends AbstractEnum {
 
-  const CONNECTED_OBJECTS = 'connected_objects';
-  const DISPLAY_NAME = 'display_name';
   const NAME = 'name';
-  const PROPERTIES = 'properties';
+  const VALUES = 'values';
 
   public function getFieldTypes() {
     return array(
-      'connected_objects' => 'list<string>',
-      'display_name' => 'string',
       'name' => 'string',
-      'properties' => 'list<ConnectionObjectOpenGraphObjectProperty>',
+      'values' => 'list<string>',
     );
   }
 }

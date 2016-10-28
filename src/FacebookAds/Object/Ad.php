@@ -116,7 +116,6 @@ class Ad extends AbstractArchivableCrudObject
     $param_types = array(
       'adlabels' => 'list<Object>',
       'execution_options' => 'list<execution_options_enum>',
-      'id' => 'string',
     );
     $enums = array(
       'execution_options_enum' => AdLabelExecutionOptionsValues::getInstance()->getValues(),
@@ -143,7 +142,6 @@ class Ad extends AbstractArchivableCrudObject
     $param_types = array(
       'adlabels' => 'list<Object>',
       'execution_options' => 'list<execution_options_enum>',
-      'id' => 'string',
     );
     $enums = array(
       'execution_options_enum' => AdLabelExecutionOptionsValues::getInstance()->getValues(),
@@ -154,9 +152,9 @@ class Ad extends AbstractArchivableCrudObject
       $this->data['id'],
       RequestInterface::METHOD_POST,
       '/adlabels',
-      new AbstractCrudObject(),
+      new AdLabel(),
       'EDGE',
-      array(),
+      AdLabel::getFieldsEnum()->getValues(),
       new TypeChecker($param_types, $enums)
     );
     $request->addParams($params);
@@ -174,6 +172,9 @@ class Ad extends AbstractArchivableCrudObject
       'breakdowns' => 'list<breakdowns_enum>',
       'date_preset' => 'date_preset_enum',
       'default_summary' => 'bool',
+      'export_columns' => 'list<string>',
+      'export_format' => 'string',
+      'export_name' => 'string',
       'fields' => 'list<fields_enum>',
       'filtering' => 'list<Object>',
       'level' => 'level_enum',
@@ -182,8 +183,8 @@ class Ad extends AbstractArchivableCrudObject
       'summary' => 'list<summary_enum>',
       'summary_action_breakdowns' => 'list<summary_action_breakdowns_enum>',
       'time_increment' => 'string',
-      'time_range' => 'map',
-      'time_ranges' => 'list<map>',
+      'time_range' => 'Object',
+      'time_ranges' => 'list<Object>',
     );
     $enums = array(
       'action_attribution_windows_enum' => AdsInsightsActionAttributionWindowsValues::getInstance()->getValues(),
@@ -221,6 +222,9 @@ class Ad extends AbstractArchivableCrudObject
       'breakdowns' => 'list<breakdowns_enum>',
       'date_preset' => 'date_preset_enum',
       'default_summary' => 'bool',
+      'export_columns' => 'list<string>',
+      'export_format' => 'string',
+      'export_name' => 'string',
       'fields' => 'list<fields_enum>',
       'filtering' => 'list<Object>',
       'level' => 'level_enum',
@@ -229,8 +233,8 @@ class Ad extends AbstractArchivableCrudObject
       'summary' => 'list<summary_enum>',
       'summary_action_breakdowns' => 'list<summary_action_breakdowns_enum>',
       'time_increment' => 'string',
-      'time_range' => 'map',
-      'time_ranges' => 'list<map>',
+      'time_range' => 'Object',
+      'time_ranges' => 'list<Object>',
     );
     $enums = array(
       'action_attribution_windows_enum' => AdsInsightsActionAttributionWindowsValues::getInstance()->getValues(),
@@ -310,10 +314,13 @@ class Ad extends AbstractArchivableCrudObject
 
     $param_types = array(
       'ad_format' => 'ad_format_enum',
+      'dynamic_creative_spec' => 'Object',
       'height' => 'unsigned int',
+      'interactive' => 'bool',
       'locale' => 'string',
+      'place_page_id' => 'int',
       'post' => 'Object',
-      'product_item_ids' => 'list<int>',
+      'product_item_ids' => 'list<string>',
       'width' => 'unsigned int',
     );
     $enums = array(
@@ -456,9 +463,9 @@ class Ad extends AbstractArchivableCrudObject
       $this->data['id'],
       RequestInterface::METHOD_POST,
       '/',
-      new AbstractCrudObject(),
+      new Ad(),
       'NODE',
-      array(),
+      Ad::getFieldsEnum()->getValues(),
       new TypeChecker($param_types, $enums)
     );
     $request->addParams($params);

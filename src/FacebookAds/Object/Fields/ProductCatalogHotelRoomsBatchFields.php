@@ -22,13 +22,9 @@
  *
  */
 
-namespace FacebookAds\Object;
+namespace FacebookAds\Object\Fields;
 
-use FacebookAds\ApiRequest;
-use FacebookAds\Cursor;
-use FacebookAds\Http\RequestInterface;
-use FacebookAds\TypeChecker;
-use FacebookAds\Object\Fields\CustomAudienceCapabilitiesFields;
+use FacebookAds\Enum\AbstractEnum;
 
 /**
  * This class is auto-genereated.
@@ -39,19 +35,31 @@ use FacebookAds\Object\Fields\CustomAudienceCapabilitiesFields;
  *
  */
 
-class CustomAudienceCapabilities extends AbstractObject {
+class ProductCatalogHotelRoomsBatchFields extends AbstractEnum {
 
-  /**
-   * @return CustomAudienceCapabilitiesFields
-   */
-  public static function getFieldsEnum() {
-    return CustomAudienceCapabilitiesFields::getInstance();
+  const ERRORS = 'errors';
+  const ERRORS_TOTAL_COUNT = 'errors_total_count';
+  const HANDLE = 'handle';
+  const STATUS = 'status';
+  const FILE = 'file';
+  const PASSWORD = 'password';
+  const STANDARD = 'standard';
+  const UPDATE_ONLY = 'update_only';
+  const URL = 'url';
+  const USERNAME = 'username';
+
+  public function getFieldTypes() {
+    return array(
+      'errors' => 'list<Object>',
+      'errors_total_count' => 'int',
+      'handle' => 'string',
+      'status' => 'string',
+      'file' => 'file',
+      'password' => 'string',
+      'standard' => 'Standard',
+      'update_only' => 'bool',
+      'url' => 'string',
+      'username' => 'string',
+    );
   }
-
-  protected static function getReferencedEnums() {
-    $ref_enums = array();
-    return $ref_enums;
-  }
-
-
 }

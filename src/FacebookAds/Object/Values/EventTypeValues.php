@@ -41,5 +41,4 @@ class EventTypeValues extends AbstractEnum {
   const VALUE_PUBLIC = 'public';
   const GROUP = 'group';
   const COMMUNITY = 'community';
-  const LEGACY = 'legacy';
 }

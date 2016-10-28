@@ -38,6 +38,7 @@ use FacebookAds\Enum\AbstractEnum;
 class AdCreativeLinkDataChildAttachmentFields extends AbstractEnum {
 
   const CALL_TO_ACTION = 'call_to_action';
+  const CAPTION = 'caption';
   const DESCRIPTION = 'description';
   const IMAGE_CROPS = 'image_crops';
   const IMAGE_HASH = 'image_hash';
@@ -51,13 +52,14 @@ class AdCreativeLinkDataChildAttachmentFields extends AbstractEnum {
   public function getFieldTypes() {
     return array(
       'call_to_action' => 'AdCreativeLinkDataCallToAction',
+      'caption' => 'string',
       'description' => 'string',
       'image_crops' => 'AdsImageCrops',
       'image_hash' => 'string',
       'link' => 'string',
       'name' => 'string',
       'picture' => 'string',
-      'place_data' => 'Object',
+      'place_data' => 'AdCreativePlaceData',
       'static_card' => 'bool',
       'video_id' => 'string',
     );

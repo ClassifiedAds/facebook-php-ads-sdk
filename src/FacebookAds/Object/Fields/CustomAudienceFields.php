@@ -42,17 +42,13 @@ class CustomAudienceFields extends AbstractEnum {
   const DATA_SOURCE = 'data_source';
   const DELIVERY_STATUS = 'delivery_status';
   const DESCRIPTION = 'description';
-  const EXCLUDED_CUSTOM_AUDIENCES = 'excluded_custom_audiences';
   const EXTERNAL_EVENT_SOURCE = 'external_event_source';
   const ID = 'id';
-  const INCLUDED_CUSTOM_AUDIENCES = 'included_custom_audiences';
-  const LAST_USED_TIME = 'last_used_time';
   const LOOKALIKE_AUDIENCE_IDS = 'lookalike_audience_ids';
   const LOOKALIKE_SPEC = 'lookalike_spec';
   const NAME = 'name';
   const OPERATION_STATUS = 'operation_status';
   const OPT_OUT_LINK = 'opt_out_link';
-  const OWNER_BUSINESS = 'owner_business';
   const PERMISSION_FOR_ACTIONS = 'permission_for_actions';
   const PIXEL_ID = 'pixel_id';
   const RETENTION_DAYS = 'retention_days';
@@ -61,13 +57,20 @@ class CustomAudienceFields extends AbstractEnum {
   const TIME_CONTENT_UPDATED = 'time_content_updated';
   const TIME_CREATED = 'time_created';
   const TIME_UPDATED = 'time_updated';
+  const CLAIM_OBJECTIVE = 'claim_objective';
   const CONTENT_TYPE = 'content_type';
-  const EXCLUSIONS = 'exclusions';
-  const INCLUSIONS = 'inclusions';
+  const DATASET_ID = 'dataset_id';
+  const EVENT_SOURCE_GROUP = 'event_source_group';
   const LIST_OF_ACCOUNTS = 'list_of_accounts';
   const ORIGIN_AUDIENCE_ID = 'origin_audience_id';
   const PREFILL = 'prefill';
   const PRODUCT_SET_ID = 'product_set_id';
+  const ASSOCIATED_AUDIENCE_ID = 'associated_audience_id';
+  const CREATION_PARAMS = 'creation_params';
+  const EXCLUSIONS = 'exclusions';
+  const INCLUSIONS = 'inclusions';
+  const PARENT_AUDIENCE_ID = 'parent_audience_id';
+  const TAGS = 'tags';
 
   public function getFieldTypes() {
     return array(
@@ -76,17 +79,13 @@ class CustomAudienceFields extends AbstractEnum {
       'data_source' => 'CustomAudienceDataSource',
       'delivery_status' => 'CustomAudienceStatus',
       'description' => 'string',
-      'excluded_custom_audiences' => 'list<CustomAudience>',
       'external_event_source' => 'AdsPixel',
       'id' => 'string',
-      'included_custom_audiences' => 'list<CustomAudience>',
-      'last_used_time' => 'datetime',
       'lookalike_audience_ids' => 'list<string>',
       'lookalike_spec' => 'LookalikeSpec',
       'name' => 'string',
       'operation_status' => 'CustomAudienceStatus',
       'opt_out_link' => 'string',
-      'owner_business' => 'Business',
       'permission_for_actions' => 'CustomAudiencePermission',
       'pixel_id' => 'string',
       'retention_days' => 'int',
@@ -95,13 +94,20 @@ class CustomAudienceFields extends AbstractEnum {
       'time_content_updated' => 'unsigned int',
       'time_created' => 'unsigned int',
       'time_updated' => 'unsigned int',
+      'claim_objective' => 'ClaimObjective',
       'content_type' => 'ContentType',
-      'exclusions' => 'list<Object>',
-      'inclusions' => 'list<Object>',
+      'dataset_id' => 'string',
+      'event_source_group' => 'string',
       'list_of_accounts' => 'list<unsigned int>',
       'origin_audience_id' => 'string',
       'prefill' => 'bool',
       'product_set_id' => 'string',
+      'associated_audience_id' => 'unsigned int',
+      'creation_params' => 'map',
+      'exclusions' => 'list<Object>',
+      'inclusions' => 'list<Object>',
+      'parent_audience_id' => 'unsigned int',
+      'tags' => 'list<string>',
     );
   }
 }

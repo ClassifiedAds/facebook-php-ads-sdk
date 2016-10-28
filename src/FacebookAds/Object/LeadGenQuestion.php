@@ -22,9 +22,13 @@
  *
  */
 
-namespace FacebookAds\Object\Fields;
+namespace FacebookAds\Object;
 
-use FacebookAds\Enum\AbstractEnum;
+use FacebookAds\ApiRequest;
+use FacebookAds\Cursor;
+use FacebookAds\Http\RequestInterface;
+use FacebookAds\TypeChecker;
+use FacebookAds\Object\Fields\LeadGenQuestionFields;
 
 /**
  * This class is auto-genereated.
@@ -35,29 +39,19 @@ use FacebookAds\Enum\AbstractEnum;
  *
  */
 
-class AdAccountTargetingInsightsFields extends AbstractEnum {
+class LeadGenQuestion extends AbstractObject {
 
-  const AUDIENCE_SIZE = 'audience_size';
-  const EXPLORATION_RATIO = 'exploration_ratio';
-  const ID = 'id';
-  const NAME = 'name';
-  const PATH = 'path';
-  const PERFORMANCE_RATING = 'performance_rating';
-  const RECOMMENDATION_RATING = 'recommendation_rating';
-  const TAGS = 'tags';
-  const TYPE = 'type';
-
-  public function getFieldTypes() {
-    return array(
-      'audience_size' => 'unsigned int',
-      'exploration_ratio' => 'float',
-      'id' => 'string',
-      'name' => 'string',
-      'path' => 'list<string>',
-      'performance_rating' => 'unsigned int',
-      'recommendation_rating' => 'unsigned int',
-      'tags' => 'list<string>',
-      'type' => 'Type',
-    );
+  /**
+   * @return LeadGenQuestionFields
+   */
+  public static function getFieldsEnum() {
+    return LeadGenQuestionFields::getInstance();
   }
+
+  protected static function getReferencedEnums() {
+    $ref_enums = array();
+    return $ref_enums;
+  }
+
+
 }

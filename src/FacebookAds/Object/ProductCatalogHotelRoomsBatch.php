@@ -22,9 +22,14 @@
  *
  */
 
-namespace FacebookAds\Object\Values;
+namespace FacebookAds\Object;
 
-use FacebookAds\Enum\AbstractEnum;
+use FacebookAds\ApiRequest;
+use FacebookAds\Cursor;
+use FacebookAds\Http\RequestInterface;
+use FacebookAds\TypeChecker;
+use FacebookAds\Object\Fields\ProductCatalogHotelRoomsBatchFields;
+use FacebookAds\Object\Values\ProductCatalogHotelRoomsBatchStandardValues;
 
 /**
  * This class is auto-genereated.
@@ -33,10 +38,26 @@ use FacebookAds\Enum\AbstractEnum;
  * on github and we'll fix in our codegen framework. We'll not be able to accept
  * pull request for this class.
  *
- * @method static ExternalEventSourceSourceTypeValues getInstance()
  */
-class ExternalEventSourceSourceTypeValues extends AbstractEnum {
 
-  const APP = 'APP';
-  const PIXEL = 'PIXEL';
+class ProductCatalogHotelRoomsBatch extends AbstractObject {
+
+  protected function getEndpoint() {
+    return 'hotel_rooms_batch';
+  }
+
+  /**
+   * @return ProductCatalogHotelRoomsBatchFields
+   */
+  public static function getFieldsEnum() {
+    return ProductCatalogHotelRoomsBatchFields::getInstance();
+  }
+
+  protected static function getReferencedEnums() {
+    $ref_enums = array();
+    $ref_enums['Standard'] = ProductCatalogHotelRoomsBatchStandardValues::getInstance()->getValues();
+    return $ref_enums;
+  }
+
+
 }

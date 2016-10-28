@@ -22,7 +22,7 @@
  *
  */
 
-namespace FacebookAds\Object\Fields;
+namespace FacebookAds\Object\Values;
 
 use FacebookAds\Enum\AbstractEnum;
 
@@ -33,19 +33,9 @@ use FacebookAds\Enum\AbstractEnum;
  * on github and we'll fix in our codegen framework. We'll not be able to accept
  * pull request for this class.
  *
+ * @method static ProductCatalogPricingVariablesBatchStandardValues getInstance()
  */
+class ProductCatalogPricingVariablesBatchStandardValues extends AbstractEnum {
 
-class ConnectionObjectOpenGraphObjectFields extends AbstractEnum {
-
-  const DISPLAY_NAME = 'display_name';
-  const NAME = 'name';
-  const PROPERTIES = 'properties';
-
-  public function getFieldTypes() {
-    return array(
-      'display_name' => 'string',
-      'name' => 'string',
-      'properties' => 'list<ConnectionObjectOpenGraphObjectProperty>',
-    );
-  }
+  const GOOGLE = 'google';
 }

@@ -22,13 +22,9 @@
  *
  */
 
-namespace FacebookAds\Object;
+namespace FacebookAds\Object\Fields;
 
-use FacebookAds\ApiRequest;
-use FacebookAds\Cursor;
-use FacebookAds\Http\RequestInterface;
-use FacebookAds\TypeChecker;
-use FacebookAds\Object\Fields\ConnectionObjectOpenGraphActionFields;
+use FacebookAds\Enum\AbstractEnum;
 
 /**
  * This class is auto-genereated.
@@ -39,19 +35,25 @@ use FacebookAds\Object\Fields\ConnectionObjectOpenGraphActionFields;
  *
  */
 
-class ConnectionObjectOpenGraphAction extends AbstractObject {
+class AdAccountTargetingUnifiedFields extends AbstractEnum {
 
-  /**
-   * @return ConnectionObjectOpenGraphActionFields
-   */
-  public static function getFieldsEnum() {
-    return ConnectionObjectOpenGraphActionFields::getInstance();
+  const AUDIENCE_SIZE = 'audience_size';
+  const DESCRIPTION = 'description';
+  const ID = 'id';
+  const NAME = 'name';
+  const PATH = 'path';
+  const TYPE = 'type';
+  const VALID = 'valid';
+
+  public function getFieldTypes() {
+    return array(
+      'audience_size' => 'unsigned int',
+      'description' => 'string',
+      'id' => 'string',
+      'name' => 'string',
+      'path' => 'list<string>',
+      'type' => 'string',
+      'valid' => 'bool',
+    );
   }
-
-  protected static function getReferencedEnums() {
-    $ref_enums = array();
-    return $ref_enums;
-  }
-
-
 }

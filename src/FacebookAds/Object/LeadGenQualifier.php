@@ -22,9 +22,13 @@
  *
  */
 
-namespace FacebookAds\Object\Fields;
+namespace FacebookAds\Object;
 
-use FacebookAds\Enum\AbstractEnum;
+use FacebookAds\ApiRequest;
+use FacebookAds\Cursor;
+use FacebookAds\Http\RequestInterface;
+use FacebookAds\TypeChecker;
+use FacebookAds\Object\Fields\LeadGenQualifierFields;
 
 /**
  * This class is auto-genereated.
@@ -35,15 +39,19 @@ use FacebookAds\Enum\AbstractEnum;
  *
  */
 
-class ConnectionObjectOpenGraphObjectPropertyFields extends AbstractEnum {
+class LeadGenQualifier extends AbstractCrudObject {
 
-  const NAME = 'name';
-  const TYPE = 'type';
-
-  public function getFieldTypes() {
-    return array(
-      'name' => 'string',
-      'type' => 'string',
-    );
+  /**
+   * @return LeadGenQualifierFields
+   */
+  public static function getFieldsEnum() {
+    return LeadGenQualifierFields::getInstance();
   }
+
+  protected static function getReferencedEnums() {
+    $ref_enums = array();
+    return $ref_enums;
+  }
+
+
 }

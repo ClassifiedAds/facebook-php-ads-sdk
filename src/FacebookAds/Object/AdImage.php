@@ -225,6 +225,7 @@ class AdImage extends AbstractCrudObject {
       $this->getNodePath(),
       RequestInterface::METHOD_GET,
       $params);
+
     $content = $response->getContent();
     $data = $content['data'];
     if ($data) {
